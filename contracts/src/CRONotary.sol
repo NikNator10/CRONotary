@@ -10,10 +10,7 @@ contract NotaryService {
         i_owner = msg.sender;
     }
 
-    event FileNotarized(
-        bytes32 indexed fileHash,
-        address indexed signerAddress
-    );
+    event FileNotarized(bytes32 indexed fileHash, address indexed signerAddress);
 
     function notarizeFile(bytes32 fileHash) public payable {
         address sender = msg.sender; // Gas saved :)
@@ -24,10 +21,7 @@ contract NotaryService {
         emit FileNotarized(fileHash, sender);
     }
 
-    function isFileSignedbyUser(
-        bytes32 fileHash,
-        address user
-    ) public view returns (bool) {
+    function isFileSignedbyUser(bytes32 fileHash, address user) public view returns (bool) {
         address[] memory signers = notaryRecords[fileHash];
         for (uint256 i = 0; i < signers.length; i++) {
             if (signers[i] == user) {
@@ -37,21 +31,21 @@ contract NotaryService {
         return false;
     }
 
-    function getSigners(
-        bytes32 fileHash
-    ) public view returns (address[] memory) {
+    function getSigners(bytes32 fileHash) public view returns (address[] memory) {
         return notaryRecords[fileHash];
     }
 
+    function getFixedFee() public pure returns (uint256) {
+        return FIXED_FEE;
+    }
+
     function withdrawFee() public onlyOwner {
-        payable(i_owner).transfer(address(this).balance);
+        (bool success,) = i_owner.call{value: address(this).balance}("");
+        require(success, "Transfer failed");
     }
 
     modifier onlyOwner() {
-        require(
-            msg.sender == i_owner,
-            "NotaryService: Caller is not the owner"
-        );
+        require(msg.sender == i_owner, "NotaryService: Caller is not the owner");
         _;
     }
 }
