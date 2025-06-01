@@ -18,6 +18,8 @@
         <span>Signing as:</span>
         <button id="connectBtn" class="btn">Connect Wallet</button>
         <span id="walletAddress" class="wallet-address"></span>
+        <p id="status" class="status-text"></p>
+
       </div>
 
       <p class="fee-note">Fee: <strong>0.5 CRO</strong> + Network Fee</p>
@@ -27,13 +29,13 @@
         <button id="signBtn" class="btn primary" disabled>Sign Document</button>
       </div>
 
-      <p id="status" class="status-text"></p>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
-  <script src="js/sign.js"></script>
-  <script src="js/web3.js"></script>
-  <script src="js/sign.js"></script>
+  <script src="js/hash.js"></script>   
+  <script src="js/web3.js"></script>    
+  <script src="js/sign.js"></script>    
+  <script src="js/verify.js"></script>
 
 </body>
 </html>
