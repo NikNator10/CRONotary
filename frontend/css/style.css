@@ -55,3 +55,85 @@
     margin-top: -2rem;
   }
 }
+
+
+/* sign.html */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+  color: black;
+}
+
+.form-box {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+label {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+input[type="file"] {
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #111;
+  color: white;
+}
+
+.wallet-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.wallet-address {
+  font-size: 1rem;
+  color: #ff0000;
+  word-break: break-all;
+}
+
+.fee-note {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+}
+
+.btn-group {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background-color: #00ffd5;
+  color: black;
+}
+
+.btn.secondary {
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+}
+
+.status-text {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #00ffd5;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign a Document</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Sign a Document</h1>
+
+    <div class="form-box">
+      <label for="fileInput">Upload File:</label>
+      <input type="file" id="fileInput" />
+
+      <div class="wallet-status">
+        <span>Signing as:</span>
+        <button id="connectBtn" class="btn">Connect Wallet</button>
+        <span id="walletAddress" class="wallet-address"></span>
+      </div>
+
+      <p class="fee-note">Fee: <strong>0.5 CRO</strong> + Network Fee</p>
+
+      <div class="btn-group">
+        <a href="index.html" class="btn secondary">Back to Home</a>
+        <button id="signBtn" class="btn primary" disabled>Sign Document</button>
+      </div>
+
+      <p id="status" class="status-text"></p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="js/sign.js"></script>
+  <script src="js/web3.js"></script>
+  <script src="js/sign.js"></script>
+
+</body>
+</html>
