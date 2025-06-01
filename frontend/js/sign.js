@@ -24,4 +24,28 @@ document.addEventListener("DOMContentLoaded", async () => {
       status.innerText = `SHA-256 Hash: ${fileHashHex}`;
     }
   });
+
+  signBtn.addEventListener("click", async () => {
+    if (!fileHashHex) {
+      status.innerText = "Please select a file first!";
+      return;
+    }
+
+    try {
+      const contract = await loadContract();
+
+      const fee = await contract.getFixedFee();
+
+      // Send transaction: notarizeFile(bytes32 fileHash) payable
+      const tx = await contract.notarizeFile("0x" + fileHashHex, { value: fee });
+      status.innerText = "Transaction sent! Waiting for confirmation...";
+
+      await tx.wait();  // Wait for the transaction to be confirmed
+      status.innerText = "File notarized successfully! TxHash: " + tx.hash;
+
+    } catch (error) {
+      console.error(error);
+      status.innerText = "Error while notarizing file: " + error.message;
+    }
+  });
 });
