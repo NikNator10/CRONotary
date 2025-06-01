@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+
+    <h1>Verify a Document</h1>
+
+        <div class="form-box">
+        <label for="fileInput">Upload File:</label>
+        <input type="file" id="fileInput" name="file">
+
+
+
+        <label for="addressInput">Enter address to check:</label>
+        <input type="text" id="addressInput" name="address" placeholder="Enter Address...">
+    
+        <p id="status" class="status-text"></p>
+
+        </div>
+
+        <div class="btn-group">
+            <a href="index.html" class="btn secondary">Back to Home</a>
+            <button type="button" id="verifyBtn" class="btn primary">Verify Document</button>
+        </div>
+    
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="js/hash.js"></script>   
+  <script src="js/contract.js"></script>
+  <script src="js/web3.js"></script>    
+  <script src="js/verify.js"></script>  
+</body>
+</html>
