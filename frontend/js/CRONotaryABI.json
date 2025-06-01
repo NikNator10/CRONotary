@@ -1,0 +1,116 @@
+[
+        {
+            "type": "constructor",
+            "inputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "FIXED_FEE",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getFixedFee",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "pure"
+        },
+        {
+            "type": "function",
+            "name": "getSigners",
+            "inputs": [
+                {
+                    "name": "fileHash",
+                    "type": "bytes32",
+                    "internalType": "bytes32"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "isFileSignedbyUser",
+            "inputs": [
+                {
+                    "name": "fileHash",
+                    "type": "bytes32",
+                    "internalType": "bytes32"
+                },
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "notarizeFile",
+            "inputs": [
+                {
+                    "name": "fileHash",
+                    "type": "bytes32",
+                    "internalType": "bytes32"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "payable"
+        },
+        {
+            "type": "function",
+            "name": "withdrawFee",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "event",
+            "name": "FileNotarized",
+            "inputs": [
+                {
+                    "name": "fileHash",
+                    "type": "bytes32",
+                    "indexed": true,
+                    "internalType": "bytes32"
+                },
+                {
+                    "name": "signerAddress",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        }
+
+    ]
